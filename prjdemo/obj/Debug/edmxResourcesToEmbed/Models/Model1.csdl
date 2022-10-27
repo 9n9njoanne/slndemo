@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="STUDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="系所資料">
+    <Key>
+      <PropertyRef Name="DEPT_CODE" />
+    </Key>
+    <Property Name="DEPT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_NAME_ENG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="課程資料">
+    <Key>
+      <PropertyRef Name="SUBJ_NO" />
+    </Key>
+    <Property Name="SUBJ_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SUBJ_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SUBJ_NAME_ENG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="學生學籍資料">
+    <Key>
+      <PropertyRef Name="STUD_NO" />
+    </Key>
+    <Property Name="STUD_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STUD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SEX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="學期課程資料">
+    <Key>
+      <PropertyRef Name="COURSE_NO" />
+    </Key>
+    <Property Name="ACAD_YEAR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SEME_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COURSE_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DEPT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SUBJ_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CREDITS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAJ_OP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TEACHER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="STUDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="系所資料" EntityType="Self.系所資料" />
+    <EntitySet Name="課程資料" EntityType="Self.課程資料" />
+    <EntitySet Name="學生學籍資料" EntityType="Self.學生學籍資料" />
+    <EntitySet Name="學期課程資料" EntityType="Self.學期課程資料" />
+    <EntitySet Name="學生選課資料" EntityType="STUDBModel.學生選課資料" />
+  </EntityContainer>
+  <EntityType Name="學生選課資料">
+    <Key>
+      <PropertyRef Name="STUD_NO" />
+      <PropertyRef Name="ACAD_YEAR" />
+      <PropertyRef Name="SEME_TYPE" />
+      <PropertyRef Name="COURSE_NO" />
+    </Key>
+    <Property Name="STUD_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACAD_YEAR" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SEME_TYPE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COURSE_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

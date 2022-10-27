@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="STUDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="系所資料">
+    <Key>
+      <PropertyRef Name="DEPT_CODE" />
+    </Key>
+    <Property Name="DEPT_CODE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DEPT_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="DEPT_NAME_ENG" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="課程資料">
+    <Key>
+      <PropertyRef Name="SUBJ_NO" />
+    </Key>
+    <Property Name="SUBJ_NO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SUBJ_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="SUBJ_NAME_ENG" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="學生學籍資料">
+    <Key>
+      <PropertyRef Name="STUD_NO" />
+    </Key>
+    <Property Name="STUD_NO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="STUD_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="SEX" Type="varchar" MaxLength="50" />
+    <Property Name="DEPT_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="TEL" Type="varchar" MaxLength="50" />
+    <Property Name="ADDRESS" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="學生選課資料">
+    <Key>
+      <PropertyRef Name="STUD_NO" />
+      <PropertyRef Name="ACAD_YEAR" />
+      <PropertyRef Name="SEME_TYPE" />
+      <PropertyRef Name="COURSE_NO" />
+    </Key>
+    <Property Name="STUD_NO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ACAD_YEAR" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SEME_TYPE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="COURSE_NO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="學期課程資料">
+    <Key>
+      <PropertyRef Name="COURSE_NO" />
+    </Key>
+    <Property Name="ACAD_YEAR" Type="varchar" MaxLength="50" />
+    <Property Name="SEME_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="COURSE_NO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DEPT_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="SUBJ_NO" Type="varchar" MaxLength="50" />
+    <Property Name="CREDITS" Type="varchar" MaxLength="50" />
+    <Property Name="MAJ_OP" Type="varchar" MaxLength="50" />
+    <Property Name="TEACHER" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="STUDBModelStoreContainer">
+    <EntitySet Name="系所資料" EntityType="Self.系所資料" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="課程資料" EntityType="Self.課程資料" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="學生學籍資料" EntityType="Self.學生學籍資料" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="學生選課資料" EntityType="Self.學生選課資料" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="學期課程資料" EntityType="Self.學期課程資料" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="STUDBModelStoreContainer" CdmEntityContainer="STUDBEntities">
+    <EntitySetMapping Name="系所資料">
+      <EntityTypeMapping TypeName="STUDBModel.系所資料">
+        <MappingFragment StoreEntitySet="系所資料">
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="DEPT_NAME_ENG" ColumnName="DEPT_NAME_ENG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="課程資料">
+      <EntityTypeMapping TypeName="STUDBModel.課程資料">
+        <MappingFragment StoreEntitySet="課程資料">
+          <ScalarProperty Name="SUBJ_NO" ColumnName="SUBJ_NO" />
+          <ScalarProperty Name="SUBJ_NAME" ColumnName="SUBJ_NAME" />
+          <ScalarProperty Name="SUBJ_NAME_ENG" ColumnName="SUBJ_NAME_ENG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="學生學籍資料">
+      <EntityTypeMapping TypeName="STUDBModel.學生學籍資料">
+        <MappingFragment StoreEntitySet="學生學籍資料">
+          <ScalarProperty Name="STUD_NO" ColumnName="STUD_NO" />
+          <ScalarProperty Name="STUD_NAME" ColumnName="STUD_NAME" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+          <ScalarProperty Name="TEL" ColumnName="TEL" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="學期課程資料">
+      <EntityTypeMapping TypeName="STUDBModel.學期課程資料">
+        <MappingFragment StoreEntitySet="學期課程資料">
+          <ScalarProperty Name="ACAD_YEAR" ColumnName="ACAD_YEAR" />
+          <ScalarProperty Name="SEME_TYPE" ColumnName="SEME_TYPE" />
+          <ScalarProperty Name="COURSE_NO" ColumnName="COURSE_NO" />
+          <ScalarProperty Name="DEPT_CODE" ColumnName="DEPT_CODE" />
+          <ScalarProperty Name="SUBJ_NO" ColumnName="SUBJ_NO" />
+          <ScalarProperty Name="CREDITS" ColumnName="CREDITS" />
+          <ScalarProperty Name="MAJ_OP" ColumnName="MAJ_OP" />
+          <ScalarProperty Name="TEACHER" ColumnName="TEACHER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="學生選課資料">
+      <EntityTypeMapping TypeName="STUDBModel.學生選課資料">
+        <MappingFragment StoreEntitySet="學生選課資料">
+          <ScalarProperty Name="COURSE_NO" ColumnName="COURSE_NO" />
+          <ScalarProperty Name="SEME_TYPE" ColumnName="SEME_TYPE" />
+          <ScalarProperty Name="ACAD_YEAR" ColumnName="ACAD_YEAR" />
+          <ScalarProperty Name="STUD_NO" ColumnName="STUD_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

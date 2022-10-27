@@ -1,0 +1,58 @@
+﻿@model IEnumerable<prjdemo.Models.HomeSelectViewModel>
+
+@{
+    ViewBag.Title = "Select";
+}
+
+<h2>選課資料</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            序
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.STUD_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACAD_YEAR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COURSE_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SUBJ_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEPT_NAME)
+        </th>
+    </tr>
+    @{ int count = 0;
+        foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>
+                    @count
+                </td>
+                <th hidden>
+                    @Html.DisplayFor(modelItem => item.STUD_NO)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.ACAD_YEAR)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.COURSE_NO)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.SUBJ_NAME)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.DEPT_NAME)
+                </th>
+            </tr>
+        }
+    }
+
+</table>

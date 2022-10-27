@@ -1,0 +1,58 @@
+﻿@model IEnumerable<prjdemo.Models.HomeListViewModel>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>學生學籍資料清單</h2>
+<p></p>
+@Html.ActionLink("新增", "Create", "Home", new { @class = "btn btn-warning" })
+<p></p>
+<table class="table table-striped" align='center' valign="middle">
+    <tr>
+        <th>
+            序
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STUD_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STUD_NAME)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DEPT_NAME)
+        </th>
+        <th>
+            功能選單
+        </th>
+    </tr>
+    @{ int count = 0;
+        foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>
+                    @count
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.STUD_NO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.STUD_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DEPT_NAME)
+                </td>
+                <td>
+
+                    @Html.ActionLink("選課資料", "Select", "Home", new { id = item.STUD_NO }, new { @class = "btn btn-info" })  |
+                    @Html.ActionLink("修改", "Edit", "Home", new { id = item.STUD_NO }, new { @class = "btn btn-success" })  |
+                    @Html.ActionLink("刪除", "Delete", "Home", new { id = item.STUD_NO }, new { onclick = "return confirm('確定要刪除嗎?')", @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    }
+
+
+</table>
