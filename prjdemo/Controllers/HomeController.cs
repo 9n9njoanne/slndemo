@@ -74,10 +74,6 @@ namespace prjdemo.Controllers
                 return RedirectToAction("List");
             STUDBEntities db = new STUDBEntities();
             學生學籍資料 t = db.學生學籍資料.FirstOrDefault(s => s.STUD_NO == id.ToString());
-            if (t == null)
-                return RedirectToAction("List");
-
-
             List<SelectListItem> gender = new List<SelectListItem>()
             {
                 new SelectListItem(){ Text = "男", Value="男"},
@@ -87,9 +83,10 @@ namespace prjdemo.Controllers
 
             List<SelectListItem> dept = db.系所資料.Select(d => new SelectListItem { Text = d.DEPT_NAME, Value = d.DEPT_CODE }).ToList();
             dept.Insert(0, new SelectListItem { Text = "選擇科系", Value = "" });
-            
-            ViewBag.SelectList = dept;
 
+            ViewBag.SelectList = dept;
+            if (t == null)
+                return RedirectToAction("List");
             return View(t);
         }
 
